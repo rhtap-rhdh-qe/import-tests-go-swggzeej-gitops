@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: import-tests-go-swggzeej-gitops
+  description: This is GitOps manifest for import-tests-go-swggzeej   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=import-tests-go-swggzeej
+    backstage.io/kubernetes-id: import-tests-go-swggzeej 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: import-tests-go-swggzeej
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:import-tests-go-swggzeej
